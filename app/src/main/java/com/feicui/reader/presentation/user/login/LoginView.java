@@ -1,12 +1,15 @@
-package com.feicui.reader.user.login;
+package com.feicui.reader.presentation.user.login;
 
 import com.feicui.apphx.basemvp.MvpView;
 
 /**
  * 登录页面视图接口
- * Created by Administrator on 2016/10/15 0015.
+ * 作者：yuanchao on 2016/10/14 0014 16:21
+ * 邮箱：yuanchao@feicuiedu.com
  */
+
 public interface LoginView extends MvpView {
+
     /**
      * 当开始加载数据时，将来调用的视图方法
      */
