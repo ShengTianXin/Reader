@@ -5,6 +5,10 @@ import android.support.annotation.NonNull;
 import org.greenrobot.eventbus.EventBus;
 
 /**
+ * resenter是View(视图)和Model(模型)的协调人。
+ * <p/>
+ * 它是通过视图接口 ，来向视图汇报工作的(控制视图行为的)
+ * <p/>
  * Created by Administrator on 2016/10/15 0015.
  */
 public abstract class MvpPresenter<V extends MvpView> {

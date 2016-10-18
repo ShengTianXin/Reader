@@ -4,6 +4,10 @@ import android.app.Application;
 import android.widget.Toast;
 
 import com.feicui.apphx.model.event.HxDisconnectEvent;
+import com.feicui.apphx.model.repository.DefaultLocalUsersRepo;
+import com.feicui.apphx.model.repository.ILocalUsersRepo;
+import com.feicui.apphx.model.repository.IRemoteUserRepo;
+import com.feicui.apphx.model.repository.MockRemoteUsersRepo;
 import com.hyphenate.EMError;
 import com.hyphenate.chat.EMClient;
 import com.hyphenate.chat.EMOptions;
@@ -17,8 +21,6 @@ import timber.log.Timber;
 
 /**
  * 环信相关基础配置
- * 作者：yuanchao on 2016/10/11 0011 11:22
- * 邮箱：yuanchao@feicuiedu.com
  */
 public abstract class HxBaseApplication extends Application {
 
@@ -31,7 +33,16 @@ public abstract class HxBaseApplication extends Application {
         // 初始化环信sdk和easeui库
         initEaseUI();
 
+        // 初始化apphx模块
+        initHxModule();
+
         EventBus.getDefault().register(this);
+    }
+
+    protected void initHxModule(){
+        IRemoteUserRepo remoteUsersRepo = new MockRemoteUsersRepo();
+        ILocalUsersRepo localUsersRepo = DefaultLocalUsersRepo.getInstance(this);
+        HxModuleInitializer.getInstance().init(remoteUsersRepo,localUsersRepo);
     }
 
     private void initEaseUI() {

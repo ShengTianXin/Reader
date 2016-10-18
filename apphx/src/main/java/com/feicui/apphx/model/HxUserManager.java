@@ -6,6 +6,7 @@ import com.feicui.apphx.model.event.HxDisconnectEvent;
 import com.feicui.apphx.model.event.HxErrorEvent;
 import com.feicui.apphx.model.event.HxEventType;
 import com.feicui.apphx.model.event.HxSimpleEvent;
+import com.feicui.apphx.model.repository.ILocalUsersRepo;
 import com.hyphenate.EMCallBack;
 import com.hyphenate.EMConnectionListener;
 import com.hyphenate.EMError;
@@ -38,6 +39,9 @@ public class HxUserManager implements EMConnectionListener {
     private final ExecutorService executorService;
     private final EventBus eventBus;
 
+    // 本地用户仓库(在登录，更新用户信息将用到)
+    private ILocalUsersRepo localUsersRepo;
+
     // 当前登录用户的环信Id
     private String currentUserId;
 
@@ -46,6 +50,10 @@ public class HxUserManager implements EMConnectionListener {
         emClient.addConnectionListener(this);
         executorService = Executors.newSingleThreadExecutor();
         eventBus = EventBus.getDefault();
+    }
+
+    public void init(ILocalUsersRepo localUsersRepo) {
+        this.localUsersRepo = localUsersRepo;
     }
 
     // start-interface: EMConnectionListener

@@ -12,13 +12,13 @@ import java.util.List;
 
 public class HxMessageManager implements EMMessageListener {
 
-    private static HxMessageManager sInstance;
+    private static HxMessageManager hxMessageManager;
 
     public static HxMessageManager getInstance() {
-        if (sInstance == null) {
-            sInstance = new HxMessageManager();
+        if (hxMessageManager == null) {
+            hxMessageManager = new HxMessageManager();
         }
-        return sInstance;
+        return hxMessageManager;
     }
 
     private final EventBus eventBus;

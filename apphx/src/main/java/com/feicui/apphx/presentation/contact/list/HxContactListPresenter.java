@@ -1,4 +1,4 @@
-package com.feicui.apphx.presentation.contact;
+package com.feicui.apphx.presentation.contact.list;
 
 import android.support.annotation.NonNull;
 
@@ -33,7 +33,7 @@ public class HxContactListPresenter extends MvpPresenter<HxContactListView> {
     }
 
     public void deleteContact(String hxId) {
-        HxContactManager.getInstance().deleteContact(hxId);
+        HxContactManager.getInstance().asyncDeleteContact(hxId);
     }
 
     /**

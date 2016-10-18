@@ -1,4 +1,4 @@
-package com.feicui.apphx.presentation.contact;
+package com.feicui.apphx.presentation.contact.list;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;

@@ -1,4 +1,4 @@
-package com.feicui.apphx.presentation.contact;
+package com.feicui.apphx.presentation.contact.list;
 
 import com.feicui.apphx.basemvp.MvpView;
 

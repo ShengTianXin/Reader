@@ -8,7 +8,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.TextView;
 
-import com.feicui.apphx.presentation.contact.HxContactListFragment;
+import com.feicui.apphx.presentation.contact.list.HxContactListFragment;
 import com.feicui.apphx.presentation.convertsation.HxConversationListFragment;
 import com.feicui.reader.R;
 import com.feicui.reader.presentation.books.BooksFragment;
